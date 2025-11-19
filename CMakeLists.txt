@@ -382,6 +382,13 @@ if(EMSCRIPTEN)
     xeus_lua_set_kernel_options(xlua)
     xeus_wasm_compile_options(xlua)
     xeus_wasm_link_options(xlua "web,worker")
+
+    target_link_options(xlua PRIVATE
+        "-lembind"
+    )
+    target_compile_options(xlua PRIVATE
+       "-lembind"
+    )
 endif()
 
 
