@@ -120,7 +120,7 @@ void setup_display(
         for i=1,args.n do
             local arg = args[i]
             -- if arg.display, is a function, we call it
-            if type(arg) == "table" and type(arg.display) == "function" then
+            if type(arg) == "userdata" and type(arg.display) == "function" then
                 arg:display()
             else
                 local repr = display.mime_bundle_repr(arg)
